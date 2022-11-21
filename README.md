@@ -5,17 +5,17 @@ This package contains the classes by which high speed data can be exchanged betw
 
 The basic concept is to have two classes of the same type, exchanging data with each other at high speeds, 
 each running in a different process. In Python it is not possible to distribute an initialized class between
-two processes. For this reason, what is distributed are dicts that contain the "state" of the class 
+two processes. For this reason, what is distributed are Python Dictionaries that contain the "state" of the class 
 instead of the class itself. So on one size, a given class is initialized and it passes its state to 
-an uninitialized version of that same classs which has been launched in a different process. In the state
+an uninitialized version of that same class which has been launched in a different process. In the state
 of both classes is a pointer to the same multiprocessing.shared_memory.Sharedmemory block.
 
-Python's Sharedmemory https://docs.python.org/3/library/multiprocessing.shared_memory.html
+Python's Shared memory https://docs.python.org/3/library/multiprocessing.shared_memory.html
 encapsulates semaphores, so the read and write actions to a shared memory, written by a user
 does not contain any checks; it can be read and written to as if it was a local variable. 
 
-This repository contains classes that wrap the Sharedmemory class and contain interfaces to 
-pass the classes initialized Sharememory to a class of the same type. 
+This repository contains classes that wrap the Shared memory class and contain interfaces to 
+pass the classes initialized Shared memory to a class of the same type. 
 
 There are classes to exchange primitive types of data:
 - class SharedBytes
