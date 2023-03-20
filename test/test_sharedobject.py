@@ -3,7 +3,7 @@ import sys
 import time
 from multiprocessing import Process
 
-from generic_tester import tst_runner
+from generic_tster import tst_runner
 from memory_interface import SharedBytes, SharedInt, SharedBool, SharedString
 
 FORMAT = '%(asctime)s:%(levelname)-8s:%(filename)s:%(funcName)s:%(lineno)d: %(message)s'
@@ -69,7 +69,6 @@ def test_first1():
 
     sh.cleanup()
 
-    return True
 
 
 def running(mem, bus):
@@ -153,7 +152,6 @@ def test_process():
     hh.cleanup()
     busy.cleanup()
 
-    return True
 
 
 def runingtight(mem, bus):
@@ -233,7 +231,6 @@ def test_processtight():
 
     logging.info("tigh processes ended")
 
-    return True
 
 
 def runingnum(mem, bus):
@@ -314,7 +311,6 @@ def test_processnum():
 
     logging.info("num process ended")
 
-    return True
 
 
 def test_startbytes():
@@ -326,7 +322,6 @@ def test_startbytes():
     assert cc == bytearray([3])
     print(cc)
 
-    return True
 
 
 def test_bool():
@@ -340,7 +335,6 @@ def test_bool():
 
     print(f"bool : {b2.read()}")
 
-    return True
 
 
 def test_ints():
@@ -380,7 +374,6 @@ def test_int():
     dd.write(smallestint)
     assert cc.read() == smallestint
 
-    return True
 
 
 def test_string():
@@ -409,7 +402,7 @@ def test_string():
     assert inp2 == rr
     assert rr == inp
 
-    return res
+    assert res == True
 
 
 def test_processstring():
@@ -450,7 +443,7 @@ def test_processstring():
 
     logging.info("num process ended")
 
-    return True
+
 
 
 def test_shared_string_basic():

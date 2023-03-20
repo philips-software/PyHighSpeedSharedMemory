@@ -1,9 +1,8 @@
 import logging
 
-from handy_modules.generic_tester import test_runner
 import logging
 
-from handy_modules.generic_tester import test_runner
+from handy_modules.generic_tster import tst_runner
 
 FORMAT = '%(asctime)s:%(levelname)-8s:%(filename)s:%(funcName)s:%(lineno)d: %(message)s'
 handlers = [logging.StreamHandler()]
@@ -24,7 +23,7 @@ def example_fail():
 def testmain():
     tests = [example_test, example_fail]
 
-    return test_runner(tests)
+    return tst_runner(tests)
 
 
 if __name__ == "__main__":

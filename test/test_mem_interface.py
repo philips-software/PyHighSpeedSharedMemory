@@ -3,7 +3,7 @@ import pickle
 import time
 from multiprocessing import Process
 
-from generic_tester import tst_runner
+from generic_tster import tst_runner
 from memory_interface import MemoryInterface, SharedBool
 
 logging.basicConfig(level=logging.INFO)
@@ -156,8 +156,6 @@ def testbasics():
         # because each are unique:
         mi.cleanup()
 
-    return True
-
 
 def readnumbers(memblk, ms, membusy):
     mi = MemoryInterface(memblk)
@@ -176,7 +174,7 @@ def readnumbers(memblk, ms, membusy):
         i += 1
 
     mi.cleanup()
-    return True
+
 
 
 def writenumbers(memblk, ms, membusy):
@@ -233,7 +231,6 @@ def testnumbers():
 
     m1.cleanup()
 
-    return True
 
 
 def test_read_reset():
@@ -305,7 +302,6 @@ def test_read_reset():
     assert m2.can_read() == False
     assert m2.can_write() == True
 
-    return True
 
 
 def tstmain():
